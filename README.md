@@ -1,38 +1,27 @@
 # docker-jenkins
 
-Sets up a container with jenkins installed listening on port 8080.
+Sets up a baseimage (https://github.com/phusion/baseimage-docker)  container with jenkins installed listening on port 8080.
 
 ## Usage
 
-To run the container, do the following:
-
-    docker run -d -P aespinosa/jenkins
-    
-    docker ps
-    CONTAINER ID        IMAGE                       COMMAND                CREATED             STATUS              PORTS                     NAMES
-    1131d37c38b1        aespinosa/jenkins:latest    java -jar /opt/jenki   12 seconds ago      Up 12 seconds       0.0.0.0:49153->8080/tcp   drunk_fermi
-
-Your jenkins instance is now available by going to http://localhost:49153 .
+Currently in pre-alpha, if you know how to use it feel free to give it a try - if you don't you should better wait until later on.
 
 ## Building
 
 To build the image, simply invoke
 
-    docker build github.com/aespinosa/docker-jenkins
+    docker build github.com/preister/docker-jenkins
 
-A prebuilt container is also available in the docker index
-
-    docker pull aespinosa/jenkins
-
+Currently there are no prebuild containers available - as well as no additional functionality added ;) 
 
 ## Author
 
-  * Allan Espinosa (<allan.espinosa@outlook.com>)
-  * Gwenn Etourneau
+  * Patrick Maximilian Reister (<patrickreister@googlemail.com>)
+  * Credit to the maintainers of docker-jenkins: Allan Espinosa (<allan.espinosa@outlook.com>), Gwenn Etourneau
 
 ## LICENSE
 
-Copyright 2013 Allan Espinosa
+Copyright 2014 Patrick Maximilian Reister
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
