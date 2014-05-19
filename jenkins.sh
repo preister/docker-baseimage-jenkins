@@ -1,0 +1,9 @@
+#!/bin/sh
+echo initializing jenkins ...
+if [ ! -d "/var/log/jenkins" ]; then
+    echo creating jenkins logfolder and changing access rights ...
+    mkdir -p /var/log/jenkins
+    chmod -R 755 /var/log/jenkins
+fi
+echo starting jenkins ...
+exec /usr/bin/java -jar /opt/jenkins.war >> /var/log/jenkins/stdout.log 2>&1
