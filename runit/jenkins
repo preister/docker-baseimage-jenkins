@@ -1,0 +1,4 @@
+#!/bin/bash
+echo starting jenkins daemon ...
+exec /usr/bin/java -jar /opt/jenkins.war >> /var/log/jenkins/stdout.log 2>&1
+echo ... jenkins daemon stopped.
