@@ -10,7 +10,7 @@ Currently in pre-alpha, if you know how to use it feel free to give it a try - i
 
 To build the image, simply invoke
 
-    docker build github.com/preister/docker-jenkins
+    docker build github.com/preister/docker-baseimage-jenkins.git
 
 Currently there are no prebuild containers available - as well as no additional functionality added ;) 
 
