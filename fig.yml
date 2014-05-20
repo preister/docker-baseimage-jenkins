@@ -1,5 +1,5 @@
 jenkins:
     build: .
-    command: /sbin/my_init -- ping localhost
+    command: /sbin/my_init -- tail -f /var/log/jenkins/stdout.log
     ports: 
      - "8080:8080"

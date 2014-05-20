@@ -17,3 +17,6 @@ if [ ! -d "/var/log/jenkins" ]; then
     mkdir -p /var/log/jenkins
     chmod -R 755 /var/log/jenkins
 fi
+
+#make sure the log file exists so we can attach to it right from the start
+touch /var/log/jenkins/stdout.log
