@@ -1,0 +1,4 @@
+#!/bin/bash
+echo starting beaver daemon ...
+exec beaver -t redis -c /etc/beaver/conf
+echo ... beaver daemon stopped.

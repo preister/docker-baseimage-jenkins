@@ -8,6 +8,7 @@ set -x
 
 #add any service installs here
 /build/jenkins.sh
+/build/beaver.sh
 
 /build/finalize.sh
 
