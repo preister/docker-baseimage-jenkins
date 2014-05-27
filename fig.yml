@@ -1,5 +1,9 @@
 jenkins:
     build: .
-    command: /sbin/my_init
+    command: /sbin/my_init --enable-insecure-key
     ports: 
      - "8080:8080"
+    environment: 
+      DOCKER_HOST: tcp://172.17.42.1:4243
+    volumes:
+     - /jenkins_config/:/jenkins

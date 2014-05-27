@@ -1,22 +1,21 @@
-#!/bin/sh
-# jenkins installation script
-VERSION=1.563
+#!/bin/bash
+set -e 
+source /build/buildconfig
+set -x
 
-echo installing jenkins version $VERSION ...
-wget -nv -O /opt/jenkins.war http://mirrors.jenkins-ci.org/war/$VERSION/jenkins.war
-ln -sf /jenkins /root/.jenkins
+# jenkins installation script
+echo installing jenkins from $JENKINS_WAR_URL ...
+wget -nv -O /opt/jenkins.war $JENKINS_WAR_URL
+echo setting JENKINS_HOME to $JENKINS_HOME
+echo $JENKINS_HOME > /etc/container_environment/JENKINS_HOME
+mkdir $JENKINS_HOME
 
 echo adding jenkins runit start scripts ...
 mkdir /etc/service/jenkins
 cp /build/runit/jenkins /etc/service/jenkins/run
 chmod +x /etc/service/jenkins/run
-#todo - persistant jenkins configuration
-
-if [ ! -d "/var/log/jenkins" ]; then
-    echo creating jenkins logfolder and changing access rights ...
-    mkdir -p /var/log/jenkins
-    chmod -R 755 /var/log/jenkins
-fi
-
-#make sure the log file exists so we can attach to it right from the start
-touch /var/log/jenkins/stdout.log
+#adding log forwarding
+mkdir /etc/service/jenkins/log
+cp /build/runit/jenkins_log /etc/service/jenkins/log/run
+chmod +x /etc/service/jenkins/log/run
+mkdir /var/log/jenkins/

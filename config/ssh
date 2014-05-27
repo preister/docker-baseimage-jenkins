@@ -1,0 +1,9 @@
+## default for all ##
+# disable host key checking for all hosts
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
