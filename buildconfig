@@ -1,3 +1,10 @@
 export LC_ALL=C
 export DEBIAN_FRONTEND=noninteractive
 minimal_apt_get_install='apt-get install -y --no-install-recommends'
+
+#enable additional features
+mercurial=1
+
+#configure features
+JENKINS_WAR_URL=http://mirrors.jenkins-ci.org/war/1.564/jenkins.war
+JENKINS_HOME=/jenkins
